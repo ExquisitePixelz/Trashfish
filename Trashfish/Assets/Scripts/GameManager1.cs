@@ -24,6 +24,8 @@ public class GameManager1 : MonoBehaviour
     [SerializeField]
     private GameObject fishNamePanel;
 
+    public string fishNameRaw;
+
 
     private void Start()
     {
@@ -64,13 +66,10 @@ public class GameManager1 : MonoBehaviour
         {
             unansweredQuestionsIndex = unansweredQuestions.Count;
             Debug.Log("Finished game");
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
+            
         } 
         else
         {
-            Debug.Log("index = " + unansweredQuestionsIndex);
-            Debug.Log("count = " + unansweredQuestions.Count);
-
             currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
             question.text = currentQuestion.question;
             button0Text.text = currentQuestion.answers[0];
@@ -92,12 +91,21 @@ public class GameManager1 : MonoBehaviour
     public void setName()
     {
         fishName.text = userInputField.text;
+        fishNameRaw = userInputField.text;
     }
 
     public void resetName()
     {
         fishName.text = " ";
         userInputField.text = " ";
+    }
+
+    public void nextScene()
+    {
+        if (unansweredQuestionsIndex == 2 && fishName.text != null)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
+        }
     }
 }
 

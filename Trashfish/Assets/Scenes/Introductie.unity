@@ -1464,7 +1464,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.5904e-41, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: -1, y: 10, z: 9, w: -11}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -2150,7 +2150,7 @@ GameObject:
   - component: {fileID: 1037087059}
   m_Layer: 0
   m_Name: GameManager1
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2190,6 +2190,7 @@ MonoBehaviour:
   fishName: {fileID: 386795092}
   userInputField: {fileID: 761008740}
   fishNamePanel: {fileID: 1435386238}
+  fishNameRaw: 
 --- !u!4 &1037087060
 Transform:
   m_ObjectHideFlags: 0
@@ -2425,6 +2426,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameManager1, Assembly-CSharp
         m_MethodName: UserSelectAnswer
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1037087059}
+        m_TargetAssemblyTypeName: GameManager1, Assembly-CSharp
+        m_MethodName: nextScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BoidSettings : ScriptableObject {
     // Settings
-    public float minSpeed = 2;
-    public float maxSpeed = 5;
+    public float minSpeed = 0.1f;
+    public float maxSpeed = 0.5f;
     public float perceptionRadius = 2.5f;
     public float avoidanceRadius = 1;
     public float maxSteerForce = 3;

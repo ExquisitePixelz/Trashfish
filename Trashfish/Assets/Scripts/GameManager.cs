@@ -8,6 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // tobe bonys ode
+    float peop = 0;
+    public Material wate;
+
     public Question[] questions;
     private static List<Question> unansweredQuestions;
     private Question currentQuestion;
@@ -37,6 +41,9 @@ public class GameManager : MonoBehaviour
             unansweredQuestions = questions.ToList<Question>(); 
         }
         SetCurrentQuestion();
+
+        //test wate
+        wate.SetFloat("Vector1_TrashValue", 0);
     }
 
     public void Update()
@@ -52,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     void SetCurrentQuestion()
     {
+
         currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
         question.text = currentQuestion.question;
         button0Text.text = currentQuestion.answers[0];
@@ -65,6 +73,12 @@ public class GameManager : MonoBehaviour
 
     public void UserSelectAnswer(int questionAnswer)
     {
+
+        // esy maak wate peope
+        peop += 0.06f;
+        wate.SetFloat("Vector1_TrashValue", peop);
+
+
         //Debug.Log(currentQuestion.answersTrashAmount.GetValue(questionAnswer));
         unansweredQuestionsIndex++;
         if(unansweredQuestionsIndex == unansweredQuestions.Count)

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6194ee95dedb4d71a8fe738abba0f47, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  minSpeed: 5
-  maxSpeed: 8
-  perceptionRadius: 1.5
+  minSpeed: 1
+  maxSpeed: 2
+  perceptionRadius: 1.65
   avoidanceRadius: 1
-  maxSteerForce: 8
+  maxSteerForce: 10.76
   alignWeight: 2
   cohesionWeight: 1
   seperateWeight: 3

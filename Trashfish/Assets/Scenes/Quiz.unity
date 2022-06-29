@@ -2848,6 +2848,9 @@ MonoBehaviour:
   - {fileID: 6364085743722347507, guid: 9bf5ec0646a9551498ca903cee3789bd, type: 3}
   - {fileID: 5972973775544688512, guid: 024d27d4e9da48248b536a8595e1db88, type: 3}
   - {fileID: 3685099881396712385, guid: 9951a8868f2b0d740b5164f80cb412c0, type: 3}
+  - {fileID: 5825865122549389834, guid: c2b49658fffe0bd42b78ef281ba39081, type: 3}
+  - {fileID: 1871340347561618195, guid: bbd6613764b424f47aa554c94de46f07, type: 3}
+  - {fileID: 7980386727347242092, guid: ad8ba4e744f4b8346a092481fc855785, type: 3}
   questions:
   - question: Welcome to the playtest, first things first. It is your job to take
       care of your fish.
@@ -3043,8 +3046,8 @@ MonoBehaviour:
     - ' '
     - ' '
     answersTrashAmount:
-    - 0.01
     - 0
+    - 0.01
     - 0
     - 0
     - 0
@@ -3061,8 +3064,8 @@ MonoBehaviour:
     - ' '
     - ' '
     answersTrashAmount:
-    - 0.01
     - 0
+    - 0.01
     - 0
     - 0
     - 0
@@ -3079,8 +3082,8 @@ MonoBehaviour:
     - ' '
     - ' '
     answersTrashAmount:
-    - 0.01
     - 0
+    - 0.01
     - 0
     - 0
     - 0
@@ -3097,8 +3100,8 @@ MonoBehaviour:
     - ' '
     - ' '
     answersTrashAmount:
-    - 0.01
     - 0
+    - 0.01
     - 0
     - 0
     - 0

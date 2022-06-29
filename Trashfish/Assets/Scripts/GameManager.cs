@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         {
             unansweredQuestions = questions.ToList<Question>(); 
         }
-        SetCurrentQuestion();
+        SetFirstQuestion();
         water.SetFloat("Vector1_TrashValue", 0);
         
     }
@@ -129,46 +129,46 @@ public class GameManager : MonoBehaviour
         {
             if (lastValue == 0.01f)
             {
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
             }
 
             if (lastValue == 0.03f)
             {
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
             }
 
             if (lastValue == 0.05f)
             {
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
             }
 
             if (lastValue == 0.07f)
             {
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
             }
 
 
@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
         buttonsPanel.SetActive(true);
     }
 
-    void SetCurrentQuestion()
+    void SetFirstQuestion()
     {
         currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
         question.text = currentQuestion.question;

@@ -1134,7 +1134,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-  - question: Eet je vis
+  - question: Eet je vis?
     hasTrash: 1
     answers:
     - Ja
@@ -1152,7 +1152,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-  - question: Hoe vaak reis je met de auto
+  - question: Hoe vaak reis je met de auto?
     hasTrash: 1
     answers:
     - nooit
@@ -1188,8 +1188,8 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-  - question: 'Doe je wel een boodschappen op de de markt bij de boer, bakker en/of
-      slager '
+  - question: Doe je wel een boodschappen op de de markt bij de boer, bakker en/of
+      slager?
     hasTrash: 1
     answers:
     - Ja
@@ -1636,6 +1636,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 405310104917315251, guid: 85787cc705223994598476bbbcd606cf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.77
+      objectReference: {fileID: 0}
     - target: {fileID: 2858888135449311552, guid: 85787cc705223994598476bbbcd606cf,
         type: 3}
       propertyPath: m_Name

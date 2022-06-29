@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5324583452895297109}
   - component: {fileID: 5976470693756002264}
   - component: {fileID: 1430486881379620384}
+  - component: {fileID: -6598725675503729509}
   m_Layer: 11
   m_Name: prefab_Trash_PlasticBottle
   m_TagString: Untagged
@@ -114,3 +115,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4344882805754708872, guid: 4b3ac6fef4c16fb4da61c637ee5a85e5, type: 3}
+--- !u!114 &-6598725675503729509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972973775544688512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7636fa28bf2f6da4f9e960a6ed53a226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

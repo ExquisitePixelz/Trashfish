@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5465501904824663007}
   - component: {fileID: 4101152229035349845}
   - component: {fileID: -8058841622697849751}
+  - component: {fileID: -1681776481514703027}
   m_Layer: 11
   m_Name: prefab_Trash_Apple
   m_TagString: Untagged
@@ -115,3 +116,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -472147775963580301, guid: 0a18c595262a6c949a6779e7a26238a2, type: 3}
+--- !u!114 &-1681776481514703027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5825865122549389834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7636fa28bf2f6da4f9e960a6ed53a226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

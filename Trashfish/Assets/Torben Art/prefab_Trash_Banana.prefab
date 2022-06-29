@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 214108250003180230}
   - component: {fileID: 66753342813902494}
   - component: {fileID: 1441112527925924447}
+  - component: {fileID: -740777249614790021}
   m_Layer: 11
   m_Name: prefab_Trash_Banana
   m_TagString: Untagged
@@ -115,3 +116,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6239881831769578202, guid: 1fc768d135c8e6044ac15d2b94a5776d, type: 3}
+--- !u!114 &-740777249614790021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871340347561618195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7636fa28bf2f6da4f9e960a6ed53a226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

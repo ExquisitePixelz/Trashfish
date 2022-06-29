@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2892690441567965716}
   - component: {fileID: 4378457796631348944}
   - component: {fileID: -3756015810297821594}
+  - component: {fileID: 7323025408819108710}
   m_Layer: 11
   m_Name: prefab_Trash_Sigarette
   m_TagString: Untagged
@@ -115,3 +116,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7387706064836869012, guid: 95c020333f609f445bf22d385d4043ba, type: 3}
+--- !u!114 &7323025408819108710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3685099881396712385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7636fa28bf2f6da4f9e960a6ed53a226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

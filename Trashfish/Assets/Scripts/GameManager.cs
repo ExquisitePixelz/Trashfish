@@ -16,13 +16,19 @@ public class GameManager : MonoBehaviour
     public Vector3 cameraPosition;
     private Vector3 pos1 = new Vector3(-9f, 10.82f, 68.47f);
     private Vector3 pos2 = new Vector3(-9f, 14.2f, 81.5f);
+    private Vector3 pos3 = new Vector3(-9f, 10.2f, 43.7f);
+    
     public float CameraPanTime = 5f;
+    public bool isLerpingToPos3;
     public bool isLerpingToPos2;
     public bool isLerpingToPos1;
     private float timer;
 
     private bool pressedAnswer = false;
     int lastAnswer;
+
+    public bool didTheFishDie = false;
+    public bool gameFinished = false;
 
     public GameObject[] trashObjects;
 
@@ -49,6 +55,9 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI button6Text;
     [SerializeField]
     private GameObject buttonsPanel;
+
+    [SerializeField]
+    private TextMeshProUGUI trashValueText;
 
     [SerializeField]
     private TextMeshProUGUI buttonNextText;
@@ -81,6 +90,12 @@ public class GameManager : MonoBehaviour
         checkEmptyButtons(button4Text);
         checkEmptyButtons(button5Text);
         checkEmptyButtons(button6Text);
+
+        if (isLerpingToPos3)
+        {
+            timer += Time.deltaTime;
+            mainCamera.transform.position = Vector3.Lerp(pos1, pos3, timer / CameraPanTime);
+        }
 
         if (isLerpingToPos2)
         {
@@ -115,6 +130,14 @@ public class GameManager : MonoBehaviour
         {
             buttonNextText.transform.parent.gameObject.SetActive(false);
         }
+
+        trashValueText.text = trashValue.ToString();
+
+        if (trashValue > 0.5)
+        {
+            Debug.Log("game over");
+            didTheFishDie = true;
+        }
     }
 
     IEnumerator addTrash(int questionAnswer)
@@ -127,26 +150,13 @@ public class GameManager : MonoBehaviour
 
         if (lastValue > 0)
         {
-            if (lastValue == 0.01f)
+            if (lastValue == 0.02f)
             {
                 Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
             }
 
-            if (lastValue == 0.03f)
+            if (lastValue == 0.06f)
             {
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-            }
-
-            if (lastValue == 0.05f)
-            {
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
                 Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
                 Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
@@ -154,7 +164,20 @@ public class GameManager : MonoBehaviour
                 Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
             }
 
-            if (lastValue == 0.07f)
+            if (lastValue == 0.10f)
+            {
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+            }
+
+            if (lastValue == 0.14f)
             {
                 Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
@@ -184,8 +207,20 @@ public class GameManager : MonoBehaviour
         timer = 0;
         isLerpingToPos1 = false;
 
-        question.transform.parent.gameObject.SetActive(true);
-        buttonsPanel.SetActive(true);
+
+       
+        if (gameFinished == true)
+        {
+            isLerpingToPos3 = true;
+            yield return new WaitForSeconds(2);
+            timer = 0;
+            isLerpingToPos1 = false;
+        } 
+        else
+        {
+            question.transform.parent.gameObject.SetActive(true);
+            buttonsPanel.SetActive(true);
+        }
     }
 
     void SetFirstQuestion()
@@ -213,7 +248,8 @@ public class GameManager : MonoBehaviour
         {
             unansweredQuestionsIndex = unansweredQuestions.Count;
             Debug.Log("Finished game");
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);   
+            gameFinished = true;
+            
         } 
         else
         {
@@ -231,8 +267,6 @@ public class GameManager : MonoBehaviour
 
     void changeWaterTrashValue(int questionAnswer)
     {
-        
-
         trashValue = trashValue + lastValue;
         water.SetFloat("Vector1_TrashValue", trashValue);
     }

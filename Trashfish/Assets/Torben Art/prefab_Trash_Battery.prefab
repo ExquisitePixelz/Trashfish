@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 944582438819184820}
   - component: {fileID: 3098234586060239998}
   - component: {fileID: -7934323695105665538}
-  - component: {fileID: 4543894462912435335}
-  m_Layer: 0
+  - component: {fileID: 7679265874788556743}
+  m_Layer: 11
   m_Name: prefab_Trash_Battery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,8 +102,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &4543894462912435335
-CapsuleCollider:
+--- !u!64 &7679265874788556743
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112,7 +112,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.5638583
-  m_Height: 7.9248238
-  m_Direction: 1
-  m_Center: {x: 0.00000047683716, y: 0.07816422, z: 5.823688e-10}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2159965483007997719, guid: 86f583c550ec03e40951adf31dc3582f, type: 3}

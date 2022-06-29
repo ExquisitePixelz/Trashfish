@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Camera mainCamera;
     public Vector3 cameraPosition;
     private Vector3 pos1 = new Vector3(-9f, 10.82f, 68.47f);
-    private Vector3 pos2 = new Vector3(-9f, 17.2f, 81.5f);
+    private Vector3 pos2 = new Vector3(-9f, 14.2f, 81.5f);
     public float CameraPanTime = 5f;
     public bool isLerpingToPos2;
     public bool isLerpingToPos1;
@@ -124,14 +124,63 @@ public class GameManager : MonoBehaviour
         question.transform.parent.gameObject.SetActive(false);
 
         isLerpingToPos2 = true;
+
+        if (lastValue > 0)
+        {
+            if (lastValue == 0.01f)
+            {
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+            }
+
+            if (lastValue == 0.03f)
+            {
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+            }
+
+            if (lastValue == 0.05f)
+            {
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+            }
+
+            if (lastValue == 0.07f)
+            {
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+                Instantiate(trashObjects[Random.Range(0, 6)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+            }
+
+
+        }
+
         yield return new WaitForSeconds(3);
         timer = 0;
         isLerpingToPos2 = false;
 
-        Instantiate(trashObjects[Random.Range(0,6)], new Vector3(-9.14f, 25f, 1.9f), Quaternion.identity);
 
         isLerpingToPos1 = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         timer = 0;
         isLerpingToPos1 = false;
 
@@ -157,9 +206,10 @@ public class GameManager : MonoBehaviour
     {
         lastAnswer = questionAnswer;
         pressedAnswer = true;
+        lastValue = (float)currentQuestion.answersTrashAmount.GetValue(questionAnswer);
 
         unansweredQuestionsIndex++;
-        if(unansweredQuestionsIndex == unansweredQuestions.Count)
+        if (unansweredQuestionsIndex == unansweredQuestions.Count)
         {
             unansweredQuestionsIndex = unansweredQuestions.Count;
             Debug.Log("Finished game");
@@ -181,11 +231,8 @@ public class GameManager : MonoBehaviour
 
     void changeWaterTrashValue(int questionAnswer)
     {
-        /*        Debug.Log("zooming camera");
-        Debug.Log("lower pipe");
-        Debug.Log("throw trash");*/
+        
 
-        lastValue = (float)currentQuestion.answersTrashAmount.GetValue(questionAnswer);
         trashValue = trashValue + lastValue;
         water.SetFloat("Vector1_TrashValue", trashValue);
     }

@@ -8,5 +8,5 @@ public class Question
     public string question;
     public bool hasTrash;
     public string[] answers = new string[7];
-    public int[] answersTrashAmount = new int[7];
+    public float[] answersTrashAmount = new float[7];
 }

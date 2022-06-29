@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // tobe bonys ode
-    float peop = 0;
-    public Material wate;
+    public Material water;
+    public float trashValue = 0f;
+    public float lastValue;
 
     public Question[] questions;
     private static List<Question> unansweredQuestions;
@@ -54,9 +54,7 @@ public class GameManager : MonoBehaviour
             unansweredQuestions = questions.ToList<Question>(); 
         }
         SetCurrentQuestion();
-
-        //test wate
-        wate.SetFloat("Vector1_TrashValue", 0);
+        water.SetFloat("Vector1_TrashValue", 0);
     }
 
     public void Update()
@@ -100,13 +98,13 @@ public class GameManager : MonoBehaviour
 
     public void UserSelectAnswer(int questionAnswer)
     {
+        lastValue = (float)currentQuestion.answersTrashAmount.GetValue(questionAnswer);
+        trashValue = trashValue + lastValue;
+        
+        water.SetFloat("Vector1_TrashValue", trashValue);
 
-        // esy maak wate peope
-        peop += 0.06f;
-        wate.SetFloat("Vector1_TrashValue", peop);
 
-
-        //Debug.Log(currentQuestion.answersTrashAmount.GetValue(questionAnswer));
+        Debug.Log(lastValue);
         unansweredQuestionsIndex++;
         if(unansweredQuestionsIndex == unansweredQuestions.Count)
         {
@@ -116,8 +114,8 @@ public class GameManager : MonoBehaviour
         } 
         else
         {
-            Debug.Log("index = " + unansweredQuestionsIndex);
-            Debug.Log("count = " + unansweredQuestions.Count);
+/*            Debug.Log("index = " + unansweredQuestionsIndex);
+            Debug.Log("count = " + unansweredQuestions.Count);*/
 
             currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
             question.text = currentQuestion.question;

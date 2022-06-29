@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -740777249614790021}
   m_Layer: 11
   m_Name: prefab_Trash_Banana
-  m_TagString: Untagged
+  m_TagString: trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

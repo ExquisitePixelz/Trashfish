@@ -8,38 +8,42 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //Trash Shizzle
     public Material water;
-    public float trashValue = 0f;
-    public float lastValue;
+    private float trashValue = 0f;
+    private float lastValue;
+    public GameObject[] trashObjects;
 
+    //Camera Shizzle
     public Camera mainCamera;
-    public Vector3 cameraPosition;
     private Vector3 pos1 = new Vector3(-9f, 10.82f, 68.47f);
     private Vector3 pos2 = new Vector3(-9f, 14.2f, 81.5f);
     private Vector3 pos3 = new Vector3(-9f, 10.2f, 43.7f);
-
-    public GameObject fish;
-    public GameObject deadFish;
-    
-    public float CameraPanTime = 5f;
-    public bool isLerpingToPos3;
-    public bool isLerpingToPos2;
-    public bool isLerpingToPos1;
+    private float CameraPanTime = 1.5f;
+    private bool isLerpingToPos3;
+    private bool isLerpingToPos2;
+    private bool isLerpingToPos1;
     private float timer;
 
+    //Fish Shizzle
+    private GameObject fish;
+    public GameObject deadFish;
+    [HideInInspector]
+    public string fishNameRaw;
+
+    //Gamestate Shizzle
     private bool pressedAnswer = false;
-    int lastAnswer;
-
-    public bool didTheFishDie = false;
-    public bool gameFinished = false;
-
-    public GameObject[] trashObjects;
-
+    private int lastAnswer;
+    private bool didTheFishDie = false;
+    private bool gameFinished = false;
+    
+    //Question Shizzle
     public Question[] questions;
     private static List<Question> unansweredQuestions;
     private Question currentQuestion;
-    public int unansweredQuestionsIndex = 0;
+    private int unansweredQuestionsIndex = 0;
 
+    //GUI Shizzle
     [SerializeField]
     private TextMeshProUGUI question;
     [SerializeField]
@@ -58,17 +62,18 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI button6Text;
     [SerializeField]
     private GameObject buttonsPanel;
-
     [SerializeField]
     private TextMeshProUGUI buttonNextText;
-    [SerializeField]
-    private TextMeshProUGUI fishName;
     [SerializeField]
     private TMP_InputField userInputField;
     [SerializeField]
     private GameObject fishNamePanel;
-
-    public string fishNameRaw;
+    [SerializeField]
+    private GameObject winnerPanel;
+    [SerializeField]
+    private GameObject loserPanel;
+    [SerializeField]
+    private GameObject resetPanel;
 
     private void Start()
     {
@@ -78,7 +83,6 @@ public class GameManager : MonoBehaviour
         }
         SetFirstQuestion();
         water.SetFloat("Vector1_TrashValue", 0);
-        
         fish = GameObject.FindGameObjectWithTag("Boid");
     }
 
@@ -137,6 +141,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("game over");
             didTheFishDie = true;
         }
+
+        if (Input.GetKey("up"))
+        {
+            skipToEnd();
+        }
     }
 
     IEnumerator addTrash(int questionAnswer)
@@ -156,44 +165,30 @@ public class GameManager : MonoBehaviour
 
             if (lastValue == 0.06f)
             {
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                for (int i = 0; i < 3; i++)
+                {
+                    Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                    yield return new WaitForSeconds(0.5f);
+                }
             }
 
             if (lastValue == 0.10f)
             {
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                for (int i = 0; i < 5; i++)
+                {
+                    Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                    yield return new WaitForSeconds(0.5f);
+                }
             }
 
             if (lastValue == 0.14f)
             {
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
-                Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                for (int i = 0; i < 7; i++)
+                {
+                    Instantiate(trashObjects[Random.Range(0, trashObjects.Length)], new Vector3(-9.14f, 45f, 1.9f), Quaternion.identity);
+                    yield return new WaitForSeconds(0.5f);
+                }
             }
-
-
         }
 
         yield return new WaitForSeconds(3);
@@ -212,19 +207,29 @@ public class GameManager : MonoBehaviour
         {
             isLerpingToPos3 = true;
             yield return new WaitForSeconds(2);
-           
-            if(didTheFishDie == true)
+            timer = 0;
+            isLerpingToPos3 = false;
+
+            if (didTheFishDie == true)
             {
+                question.transform.parent.gameObject.SetActive(false);
+                buttonNextText.transform.parent.gameObject.SetActive(false);
+                loserPanel.SetActive(true);
                 Vector3 fishPos = fish.transform.position;
                 Quaternion fishQuaternion = fish.transform.rotation;
                 Destroy(fish);
                 Instantiate(deadFish, fishPos, fishQuaternion);
             } else
             {
+                question.transform.parent.gameObject.SetActive(false);
+                buttonNextText.transform.parent.gameObject.SetActive(false);
+                winnerPanel.SetActive(true);
                 Debug.Log("You WON!");
             }
+            yield return new WaitForSeconds(2);
+            resetPanel.SetActive(true);
 
-            isLerpingToPos1 = false;
+            
         } 
         else
         {
@@ -295,22 +300,26 @@ public class GameManager : MonoBehaviour
 
     public void setName()
     {
-        fishName.text = userInputField.text;
         fishNameRaw = userInputField.text;
-    }
-
-    public void resetName()
-    {
-        fishName.text = " ";
-        userInputField.text = " ";
     }
 
     public void nextScene()
     {
-        unansweredQuestionsIndex++;
-        currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
-        question.text = currentQuestion.question;
-        buttonNextText.text = currentQuestion.answers[0];
+        if (unansweredQuestionsIndex == 0)
+        {
+            unansweredQuestionsIndex++;
+            currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
+            question.text = currentQuestion.question;
+            buttonNextText.text = currentQuestion.answers[0];
+        }
+
+        if (unansweredQuestionsIndex >= 1 && fishNameRaw != "")
+        {
+            unansweredQuestionsIndex++;
+            currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
+            question.text = currentQuestion.question;
+            buttonNextText.text = currentQuestion.answers[0];
+        } 
 
         if (unansweredQuestionsIndex > 2)
         {
@@ -323,6 +332,31 @@ public class GameManager : MonoBehaviour
             button5Text.text = currentQuestion.answers[5];
             button6Text.text = currentQuestion.answers[6];
         }
+    }
+
+    public void retry()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void quit()
+    {
+        Application.Quit();
+    }
+
+    public void skipToEnd()
+    {
+        unansweredQuestionsIndex = 19;
+        buttonsPanel.SetActive(true);
+        currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
+        question.text = currentQuestion.question;
+        button0Text.text = currentQuestion.answers[0];
+        button1Text.text = currentQuestion.answers[1];
+        button2Text.text = currentQuestion.answers[2];
+        button3Text.text = currentQuestion.answers[3];
+        button4Text.text = currentQuestion.answers[4];
+        button5Text.text = currentQuestion.answers[5];
+        button6Text.text = currentQuestion.answers[6];
     }
 }
 

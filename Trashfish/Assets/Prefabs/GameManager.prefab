@@ -1,0 +1,440 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1521433651947970487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1521433651947970481}
+  - component: {fileID: 1521433651947970486}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1521433651947970481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521433651947970487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1521433651947970486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521433651947970487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3abb8cbb4b8d7499604a731ea52ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  water: {fileID: 2100000, guid: c3b8cf3b7f3c2b343b4e38f80f8ac6ee, type: 2}
+  trashObjects:
+  - {fileID: 3602843971700430251, guid: 11b2a8131afb3b04ebb9f64dded73203, type: 3}
+  - {fileID: 5847404586724751769, guid: a10fc49cc5e7b49488e71ea8ac9ecb3c, type: 3}
+  - {fileID: 2278342812560359907, guid: 8d6c2b8286b3c3b49aff1ebbe81e2484, type: 3}
+  - {fileID: 6364085743722347507, guid: 9bf5ec0646a9551498ca903cee3789bd, type: 3}
+  - {fileID: 5972973775544688512, guid: 024d27d4e9da48248b536a8595e1db88, type: 3}
+  - {fileID: 3685099881396712385, guid: 9951a8868f2b0d740b5164f80cb412c0, type: 3}
+  - {fileID: 5825865122549389834, guid: c2b49658fffe0bd42b78ef281ba39081, type: 3}
+  - {fileID: 1871340347561618195, guid: bbd6613764b424f47aa554c94de46f07, type: 3}
+  - {fileID: 7980386727347242092, guid: ad8ba4e744f4b8346a092481fc855785, type: 3}
+  mainCamera: {fileID: 0}
+  deadFish: {fileID: 7764751370594870776, guid: d1fec61018dc45a4eb057fead6e16d0a,
+    type: 3}
+  fishNameRaw: 
+  questions:
+  - question: Welcome to the playtest, first things first. It is your job to take
+      care of your fish.
+    hasTrash: 1
+    answers:
+    - next
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: This is your fish, you love him to death. Do you still remember the
+      name you gave it?
+    hasTrash: 1
+    answers:
+    - next
+    - 
+    - 
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: You and your fish can now start the game! Enjoy!
+    hasTrash: 1
+    answers:
+    - Start Game!
+    - 
+    - 
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Ben je actief bezig met het milieu?
+    hasTrash: 1
+    answers:
+    - Helemaal niet (1)
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - helemaal wel (7)
+    answersTrashAmount:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Eet je vis?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Hoe vaak reis je met de auto?
+    hasTrash: 1
+    answers:
+    - nooit
+    - 1x per jaar
+    - 3x per jaar
+    - 4/5x per jaar
+    - vaker dan 5x per jaar
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0.02
+    - 0.06
+    - 0.1
+    - 0.1
+    - 0
+    - 0
+  - question: Hoevaak vlieg je per jaar?
+    hasTrash: 1
+    answers:
+    - vaker dan 5x per jaar
+    - 4/5x per jaar
+    - 3x per jaar
+    - 1x per jaar
+    - nooit
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0.14
+    - 0.1
+    - 0.06
+    - 0.02
+    - 0
+    - 0
+    - 0
+  - question: Doe je wel een boodschappen op de de markt bij de boer, bakker en/of
+      slager?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0.06
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Een tas kopen bij het aanschaffen van een product?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0.06
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Wat doe je met overgebleven voedsel op je bord?
+    hasTrash: 1
+    answers:
+    - Bewaren
+    - Alles wordt opgegeten
+    - In de prullebak gooien
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0
+    - 0.06
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Recycle je GFT (groen, fruit en tuin)?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0.02
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Recycle je karton?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0.02
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Recycle je batterijen?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0.02
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Recycle je plastic?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0.02
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Heb je wel eens wat op de grond gegooid?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0.06
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Koop jij veel van het internet?
+    hasTrash: 1
+    answers:
+    - helemaal wel (7)
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - Helemaal niet (1)
+    answersTrashAmount:
+    - 0.1
+    - 0.06
+    - 0.06
+    - 0.02
+    - 0.02
+    - 0.02
+    - 0
+  - question: Gooi jij gerookte sigaretten op de grond?
+    hasTrash: 1
+    answers:
+    - Ja
+    - Nee
+    - Nee (ik rook niet)
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0.06
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Gooi jij vaak voedsel uit de koelkast/diepvries weg?
+    hasTrash: 1
+    answers:
+    - Helemaal wel (7)
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - Helemaal niet (1)
+    answersTrashAmount:
+    - 0.14
+    - 0.1
+    - 0.1
+    - 0.06
+    - 0.02
+    - 0.02
+    - 0
+  - question: Bestellen of het afhalen van voedsel?
+    hasTrash: 1
+    answers:
+    - Bestellen
+    - Afhalen
+    - Ik kook altijd zelf
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0.1
+    - 0.06
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - question: Wat doe jij met afval als je buiten bent?
+    hasTrash: 1
+    answers:
+    - Bij je houden om thuis te scheiden
+    - Op straat gooien
+    - In de dichtbijzijnste prullebak gooien
+    - ' '
+    - ' '
+    - ' '
+    - ' '
+    answersTrashAmount:
+    - 0
+    - 0.14
+    - 0.02
+    - 0
+    - 0
+    - 0
+    - 0
+  question: {fileID: 0}
+  button0Text: {fileID: 0}
+  button1Text: {fileID: 0}
+  button2Text: {fileID: 0}
+  button3Text: {fileID: 0}
+  button4Text: {fileID: 0}
+  button5Text: {fileID: 0}
+  button6Text: {fileID: 0}
+  buttonsPanel: {fileID: 0}
+  buttonNextText: {fileID: 0}
+  fishName: {fileID: 0}
+  userInputField: {fileID: 0}
+  fishNamePanel: {fileID: 0}
+  winnerPanel: {fileID: 0}
+  loserPanel: {fileID: 0}
+  resetPanel: {fileID: 0}

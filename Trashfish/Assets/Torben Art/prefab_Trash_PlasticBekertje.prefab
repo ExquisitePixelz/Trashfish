@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5106900042414589253}
   m_Layer: 11
   m_Name: prefab_Trash_PlasticBekertje
-  m_TagString: Untagged
+  m_TagString: trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

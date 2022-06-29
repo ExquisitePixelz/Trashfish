@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Boid
   - water
+  - pipe
+  - trash
   layers:
   - Default
   - TransparentFX

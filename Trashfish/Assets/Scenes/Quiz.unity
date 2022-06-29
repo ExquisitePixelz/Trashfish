@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 254002346}
   - component: {fileID: 254002345}
   - component: {fileID: 254002344}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 254002342}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -2937,7 +2937,13 @@ MonoBehaviour:
   CameraPanTime: 1.5
   isLerpingToPos2: 0
   isLerpingToPos1: 0
-  trash: {fileID: 7140880164522035439, guid: c9ea904048ded0348bbf3715afe495c7, type: 3}
+  trashObjects:
+  - {fileID: 3602843971700430251, guid: 11b2a8131afb3b04ebb9f64dded73203, type: 3}
+  - {fileID: 5847404586724751769, guid: a10fc49cc5e7b49488e71ea8ac9ecb3c, type: 3}
+  - {fileID: 2278342812560359907, guid: 8d6c2b8286b3c3b49aff1ebbe81e2484, type: 3}
+  - {fileID: 6364085743722347507, guid: 9bf5ec0646a9551498ca903cee3789bd, type: 3}
+  - {fileID: 5972973775544688512, guid: 024d27d4e9da48248b536a8595e1db88, type: 3}
+  - {fileID: 3685099881396712385, guid: 9951a8868f2b0d740b5164f80cb412c0, type: 3}
   questions:
   - question: Welcome to the playtest, first things first. It is your job to take
       care of your fish.
@@ -4173,7 +4179,7 @@ GameObject:
   - component: {fileID: 1642571607}
   - component: {fileID: 1642571606}
   - component: {fileID: 1642571605}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

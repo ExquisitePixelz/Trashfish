@@ -24,8 +24,7 @@ public class GameManager : MonoBehaviour
     private bool pressedAnswer = false;
     int lastAnswer;
 
-    public GameObject trash;
-
+    public GameObject[] trashObjects;
 
     public Question[] questions;
     private static List<Question> unansweredQuestions;
@@ -129,7 +128,7 @@ public class GameManager : MonoBehaviour
         timer = 0;
         isLerpingToPos2 = false;
 
-        Instantiate(trash, new Vector3(-9.14f, 25f, 1.9f), Quaternion.identity);
+        Instantiate(trashObjects[Random.Range(0,6)], new Vector3(-9.14f, 25f, 1.9f), Quaternion.identity);
 
         isLerpingToPos1 = true;
         yield return new WaitForSeconds(5);

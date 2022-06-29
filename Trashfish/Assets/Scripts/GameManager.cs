@@ -33,6 +33,19 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI button5Text;
     [SerializeField]
     private TextMeshProUGUI button6Text;
+    [SerializeField]
+    private GameObject buttonsPanel;
+
+    [SerializeField]
+    private TextMeshProUGUI buttonNextText;
+    [SerializeField]
+    private TextMeshProUGUI fishName;
+    [SerializeField]
+    private TMP_InputField userInputField;
+    [SerializeField]
+    private GameObject fishNamePanel;
+
+    public string fishNameRaw;
 
     private void Start()
     {
@@ -55,12 +68,27 @@ public class GameManager : MonoBehaviour
         checkEmptyButtons(button4Text);
         checkEmptyButtons(button5Text);
         checkEmptyButtons(button6Text);
+
+        if (unansweredQuestionsIndex == 1)
+        {
+            fishNamePanel.SetActive(true);
+        }
+        else
+        {
+            fishNamePanel.SetActive(false);
+        }
+
+        if (unansweredQuestionsIndex > 2)
+        {
+            buttonNextText.transform.parent.gameObject.SetActive(false);
+        }
     }
 
     void SetCurrentQuestion()
     {
         currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
         question.text = currentQuestion.question;
+        buttonNextText.text = currentQuestion.answers[0];
         button0Text.text = currentQuestion.answers[0];
         button1Text.text = currentQuestion.answers[1];
         button2Text.text = currentQuestion.answers[2];
@@ -93,6 +121,7 @@ public class GameManager : MonoBehaviour
 
             currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
             question.text = currentQuestion.question;
+            buttonNextText.text = currentQuestion.answers[0];
             button0Text.text = currentQuestion.answers[0];
             button1Text.text = currentQuestion.answers[1];
             button2Text.text = currentQuestion.answers[2];
@@ -112,6 +141,27 @@ public class GameManager : MonoBehaviour
         else
         {
             button.transform.parent.gameObject.SetActive(true);
+        }
+    }
+
+    public void setName()
+    {
+        fishName.text = userInputField.text;
+        fishNameRaw = userInputField.text;
+    }
+
+    public void resetName()
+    {
+        fishName.text = " ";
+        userInputField.text = " ";
+    }
+
+    public void nextScene()
+    {
+        if (unansweredQuestionsIndex == 2 && fishName.text != null)
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            buttonsPanel.SetActive(true);
         }
     }
 }

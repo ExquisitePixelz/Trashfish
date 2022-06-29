@@ -19,7 +19,7 @@ public class getName : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        fishName = gm.GetComponent<GameManager1>().fishNameRaw;
+        fishName = gm.GetComponent<GameManager>().fishNameRaw;
         ingameFishName.text = fishName;
     }
 }

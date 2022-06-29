@@ -2168,12 +2168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: Welcome to the playtest, first things first. It is your job to take
-      care of your fish.
-    hasTrash: 0
-    answers:
-    - next
-    answersTrashAmount: 
   - question: This is your fish, you love him to death. Do you still remember the
       name you gave it?
     hasTrash: 0
@@ -2184,6 +2178,12 @@ MonoBehaviour:
     hasTrash: 0
     answers:
     - start game!
+    answersTrashAmount: 
+  - question: Welcome to the playtest, first things first. It is your job to take
+      care of your fish.
+    hasTrash: 0
+    answers:
+    - next
     answersTrashAmount: 
   question: {fileID: 363489337}
   button0Text: {fileID: 950705104}

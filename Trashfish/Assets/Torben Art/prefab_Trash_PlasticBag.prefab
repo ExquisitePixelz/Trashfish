@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2556434415299777788}
   - component: {fileID: 332897794263490614}
   - component: {fileID: -8487276640799204228}
-  - component: {fileID: 6704480978321956169}
-  m_Layer: 0
+  - component: {fileID: -400123179390146625}
+  m_Layer: 11
   m_Name: prefab_Trash_PlasticBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,8 +99,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &6704480978321956169
-CapsuleCollider:
+--- !u!64 &-400123179390146625
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,7 +109,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 4.7113123
-  m_Height: 11.786257
-  m_Direction: 1
-  m_Center: {x: 0.83646566, y: 6.6949663, z: 0.32835823}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 4429cb3f5ac9e724fa2a8a3ef21eacbe, type: 3}

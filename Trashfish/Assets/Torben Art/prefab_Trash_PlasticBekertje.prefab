@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 7256932299085573868}
   - component: {fileID: 4850722267796937254}
   - component: {fileID: 1119574140814933883}
-  - component: {fileID: -4382928060025430594}
-  - component: {fileID: -1130822559602113890}
-  m_Layer: 0
+  - component: {fileID: -1334698706804824084}
+  m_Layer: 11
   m_Name: prefab_Trash_PlasticBekertje
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6364085743722347507}
   m_LocalRotation: {x: 0.25176477, y: 0.36304766, z: -0.08455625, w: 0.8931188}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12.65, y: 9.8422785, z: -3.26}
   m_LocalScale: {x: 0.54324, y: 0.54324, z: 0.54324}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,21 +99,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &-4382928060025430594
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6364085743722347507}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 3.2485888
-  m_Height: 5.0465384
-  m_Direction: 1
-  m_Center: {x: -0.39422458, y: 5.2824664, z: 0.25138408}
---- !u!64 &-1130822559602113890
+--- !u!64 &-1334698706804824084
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

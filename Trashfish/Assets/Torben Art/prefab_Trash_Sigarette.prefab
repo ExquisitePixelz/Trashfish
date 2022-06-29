@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1134926796589065950}
   - component: {fileID: 2892690441567965716}
   - component: {fileID: 4378457796631348944}
-  - component: {fileID: 8219343957108397820}
-  m_Layer: 0
+  - component: {fileID: -3756015810297821594}
+  m_Layer: 11
   m_Name: prefab_Trash_Sigarette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,8 +101,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &8219343957108397820
-CapsuleCollider:
+--- !u!64 &-3756015810297821594
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,7 +111,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.62288505
-  m_Height: 5.4280396
-  m_Direction: 1
-  m_Center: {x: -0.11057238, y: 2.1210742, z: -0.025181623}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: 95c020333f609f445bf22d385d4043ba, type: 3}

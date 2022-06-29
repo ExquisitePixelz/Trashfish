@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7926422452227263135}
   - component: {fileID: 5324583452895297109}
   - component: {fileID: 5976470693756002264}
-  - component: {fileID: -8792569750813726079}
-  m_Layer: 0
+  - component: {fileID: 1430486881379620384}
+  m_Layer: 11
   m_Name: prefab_Trash_PlasticBottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,8 +100,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &-8792569750813726079
-CapsuleCollider:
+--- !u!64 &1430486881379620384
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -110,7 +110,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 4.3024583
-  m_Height: 10.896421
-  m_Direction: 1
-  m_Center: {x: -0.21173583, y: 4.3909163, z: 0.042279452}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4344882805754708872, guid: 4b3ac6fef4c16fb4da61c637ee5a85e5, type: 3}

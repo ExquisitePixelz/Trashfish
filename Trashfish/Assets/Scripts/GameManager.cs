@@ -158,9 +158,8 @@ public class GameManager : MonoBehaviour
 
     public void nextScene()
     {
-        if (unansweredQuestionsIndex == 2 && fishName.text != null)
+        if (unansweredQuestionsIndex > 2 && fishName.text != null)
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             buttonsPanel.SetActive(true);
         }
     }

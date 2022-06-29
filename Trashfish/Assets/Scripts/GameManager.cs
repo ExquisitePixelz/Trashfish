@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     private Vector3 pos1 = new Vector3(-9f, 10.82f, 68.47f);
     private Vector3 pos2 = new Vector3(-9f, 14.2f, 81.5f);
     private Vector3 pos3 = new Vector3(-9f, 10.2f, 43.7f);
+
+    public GameObject fish;
+    public GameObject deadFish;
     
     public float CameraPanTime = 5f;
     public bool isLerpingToPos3;
@@ -35,7 +38,7 @@ public class GameManager : MonoBehaviour
     public Question[] questions;
     private static List<Question> unansweredQuestions;
     private Question currentQuestion;
-    private int unansweredQuestionsIndex = 0;
+    public int unansweredQuestionsIndex = 0;
 
     [SerializeField]
     private TextMeshProUGUI question;
@@ -57,9 +60,6 @@ public class GameManager : MonoBehaviour
     private GameObject buttonsPanel;
 
     [SerializeField]
-    private TextMeshProUGUI trashValueText;
-
-    [SerializeField]
     private TextMeshProUGUI buttonNextText;
     [SerializeField]
     private TextMeshProUGUI fishName;
@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         SetFirstQuestion();
         water.SetFloat("Vector1_TrashValue", 0);
         
+        fish = GameObject.FindGameObjectWithTag("Boid");
     }
 
     public void Update()
@@ -130,8 +131,6 @@ public class GameManager : MonoBehaviour
         {
             buttonNextText.transform.parent.gameObject.SetActive(false);
         }
-
-        trashValueText.text = trashValue.ToString();
 
         if (trashValue > 0.5)
         {
@@ -213,7 +212,18 @@ public class GameManager : MonoBehaviour
         {
             isLerpingToPos3 = true;
             yield return new WaitForSeconds(2);
-            timer = 0;
+           
+            if(didTheFishDie == true)
+            {
+                Vector3 fishPos = fish.transform.position;
+                Quaternion fishQuaternion = fish.transform.rotation;
+                Destroy(fish);
+                Instantiate(deadFish, fishPos, fishQuaternion);
+            } else
+            {
+                Debug.Log("You WON!");
+            }
+
             isLerpingToPos1 = false;
         } 
         else

@@ -12,6 +12,21 @@ public class GameManager : MonoBehaviour
     public float trashValue = 0f;
     public float lastValue;
 
+    public Camera mainCamera;
+    public Vector3 cameraPosition;
+    private Vector3 pos1 = new Vector3(-9f, 10.82f, 68.47f);
+    private Vector3 pos2 = new Vector3(-9f, 17.2f, 81.5f);
+    public float CameraPanTime = 5f;
+    public bool isLerpingToPos2;
+    public bool isLerpingToPos1;
+    private float timer;
+
+    private bool pressedAnswer = false;
+    int lastAnswer;
+
+    public GameObject trash;
+
+
     public Question[] questions;
     private static List<Question> unansweredQuestions;
     private Question currentQuestion;
@@ -55,6 +70,7 @@ public class GameManager : MonoBehaviour
         }
         SetCurrentQuestion();
         water.SetFloat("Vector1_TrashValue", 0);
+        
     }
 
     public void Update()
@@ -66,6 +82,26 @@ public class GameManager : MonoBehaviour
         checkEmptyButtons(button4Text);
         checkEmptyButtons(button5Text);
         checkEmptyButtons(button6Text);
+
+        if (isLerpingToPos2)
+        {
+            timer += Time.deltaTime;
+            mainCamera.transform.position = Vector3.Lerp(pos1, pos2, timer / CameraPanTime);
+        }
+
+        if (isLerpingToPos1)
+        {
+            timer += Time.deltaTime;
+            mainCamera.transform.position = Vector3.Lerp(pos2, pos1, timer / CameraPanTime);
+        }
+
+
+        if (pressedAnswer == true)
+        {
+            StartCoroutine(addTrash(lastAnswer));
+            changeWaterTrashValue(lastAnswer);
+        }
+
 
         if (unansweredQuestionsIndex == 1)
         {
@@ -80,6 +116,28 @@ public class GameManager : MonoBehaviour
         {
             buttonNextText.transform.parent.gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator addTrash(int questionAnswer)
+    {
+        pressedAnswer = false;
+        buttonsPanel.SetActive(false);
+        question.transform.parent.gameObject.SetActive(false);
+
+        isLerpingToPos2 = true;
+        yield return new WaitForSeconds(3);
+        timer = 0;
+        isLerpingToPos2 = false;
+
+        Instantiate(trash, new Vector3(-9.14f, 25f, 1.9f), Quaternion.identity);
+
+        isLerpingToPos1 = true;
+        yield return new WaitForSeconds(5);
+        timer = 0;
+        isLerpingToPos1 = false;
+
+        question.transform.parent.gameObject.SetActive(true);
+        buttonsPanel.SetActive(true);
     }
 
     void SetCurrentQuestion()
@@ -98,13 +156,9 @@ public class GameManager : MonoBehaviour
 
     public void UserSelectAnswer(int questionAnswer)
     {
-        lastValue = (float)currentQuestion.answersTrashAmount.GetValue(questionAnswer);
-        trashValue = trashValue + lastValue;
-        
-        water.SetFloat("Vector1_TrashValue", trashValue);
+        lastAnswer = questionAnswer;
+        pressedAnswer = true;
 
-
-        Debug.Log(lastValue);
         unansweredQuestionsIndex++;
         if(unansweredQuestionsIndex == unansweredQuestions.Count)
         {
@@ -114,12 +168,8 @@ public class GameManager : MonoBehaviour
         } 
         else
         {
-/*            Debug.Log("index = " + unansweredQuestionsIndex);
-            Debug.Log("count = " + unansweredQuestions.Count);*/
-
             currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
             question.text = currentQuestion.question;
-            buttonNextText.text = currentQuestion.answers[0];
             button0Text.text = currentQuestion.answers[0];
             button1Text.text = currentQuestion.answers[1];
             button2Text.text = currentQuestion.answers[2];
@@ -128,6 +178,17 @@ public class GameManager : MonoBehaviour
             button5Text.text = currentQuestion.answers[5];
             button6Text.text = currentQuestion.answers[6];
         }
+    }
+
+    void changeWaterTrashValue(int questionAnswer)
+    {
+        /*        Debug.Log("zooming camera");
+        Debug.Log("lower pipe");
+        Debug.Log("throw trash");*/
+
+        lastValue = (float)currentQuestion.answersTrashAmount.GetValue(questionAnswer);
+        trashValue = trashValue + lastValue;
+        water.SetFloat("Vector1_TrashValue", trashValue);
     }
 
     void checkEmptyButtons(TextMeshProUGUI button)
@@ -156,9 +217,21 @@ public class GameManager : MonoBehaviour
 
     public void nextScene()
     {
-        if (unansweredQuestionsIndex > 2 && fishName.text != null)
+        unansweredQuestionsIndex++;
+        currentQuestion = unansweredQuestions[unansweredQuestionsIndex];
+        question.text = currentQuestion.question;
+        buttonNextText.text = currentQuestion.answers[0];
+
+        if (unansweredQuestionsIndex > 2)
         {
             buttonsPanel.SetActive(true);
+            button0Text.text = currentQuestion.answers[0];
+            button1Text.text = currentQuestion.answers[1];
+            button2Text.text = currentQuestion.answers[2];
+            button3Text.text = currentQuestion.answers[3];
+            button4Text.text = currentQuestion.answers[4];
+            button5Text.text = currentQuestion.answers[5];
+            button6Text.text = currentQuestion.answers[6];
         }
     }
 }

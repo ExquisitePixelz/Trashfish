@@ -457,6 +457,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3286308893967221533, guid: 9287d9eef2d125141af58cd51d19991c,
         type: 3}
+      propertyPath: m_Volume
+      value: 0.117
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286308893967221533, guid: 9287d9eef2d125141af58cd51d19991c,
+        type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
@@ -494,6 +499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659006572311259080, guid: 9287d9eef2d125141af58cd51d19991c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.259
       objectReference: {fileID: 0}
     - target: {fileID: 8659006572311259080, guid: 9287d9eef2d125141af58cd51d19991c,
         type: 3}
@@ -2212,6 +2222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: questions.Array.data[18].answers.Array.data[2]
       value: ' '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[3].answersTrashAmount.Array.data[0]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
         type: 3}

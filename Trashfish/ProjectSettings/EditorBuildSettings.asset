@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Quiz.unity
     guid: 3365374a128e344a3aaca42f38591138
+  - enabled: 1
+    path: Assets/Scenes/Quiz placebo.unity
+    guid: d7026c0b629311a49ab96662f2b3d217
   m_configObjects: {}

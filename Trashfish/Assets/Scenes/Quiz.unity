@@ -2144,6 +2144,32 @@ PrefabInstance:
       objectReference: {fileID: 928023861}
     - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
         type: 3}
+      propertyPath: questions.Array.data[5].question
+      value: 'Hoe vaak per week reis je met de auto? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[6].question
+      value: 'Hoevaak vlieg je per jaar? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[7].question
+      value: Doe je wel eens boodschappen op de de markt bij de boer, bakker en/of
+        slager?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[14].question
+      value: Gooi je wel eens wat op de grond?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[5].answers.Array.data[0]
+      value: nooit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
       propertyPath: questions.Array.data[5].answers.Array.data[1]
       value: 1x per week
       objectReference: {fileID: 0}
@@ -2161,6 +2187,41 @@ PrefabInstance:
         type: 3}
       propertyPath: questions.Array.data[5].answers.Array.data[4]
       value: vaker dan 5x per week
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[6].answers.Array.data[4]
+      value: minder dan 1 keer per jaar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[6].answers.Array.data[5]
+      value: nooit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[18].answers.Array.data[0]
+      value: Ja
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[18].answers.Array.data[1]
+      value: Nee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[18].answers.Array.data[2]
+      value: ' '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[6].answersTrashAmount.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521433651947970486, guid: 440fcb128fd172f428437b3b423c4379,
+        type: 3}
+      propertyPath: questions.Array.data[18].answersTrashAmount.Array.data[1]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1521433651947970487, guid: 440fcb128fd172f428437b3b423c4379,
         type: 3}
